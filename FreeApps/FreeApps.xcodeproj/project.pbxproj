@@ -8,23 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		DC5382EB2B31EB5300AF6009 /* FreeAppsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5382EA2B31EB5300AF6009 /* FreeAppsApp.swift */; };
-		DC5382ED2B31EB5300AF6009 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5382EC2B31EB5300AF6009 /* ContentView.swift */; };
+		DC5382ED2B31EB5300AF6009 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5382EC2B31EB5300AF6009 /* HomeView.swift */; };
 		DC5382EF2B31EB5600AF6009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5382EE2B31EB5600AF6009 /* Assets.xcassets */; };
 		DC5382F22B31EB5600AF6009 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5382F12B31EB5600AF6009 /* Preview Assets.xcassets */; };
 		DC5382FA2B31EB8200AF6009 /* AppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5382F92B31EB8200AF6009 /* AppResponse.swift */; };
 		DC5382FD2B31EBB700AF6009 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5382FC2B31EBB700AF6009 /* WebServiceManager.swift */; };
 		DC5383002B31EF0800AF6009 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5382FF2B31EF0800AF6009 /* ViewModel.swift */; };
+		DC5383282B32C92B00AF6009 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5383272B32C92B00AF6009 /* DetailView.swift */; };
+		DC53832B2B32CB0700AF6009 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC53832A2B32CB0700AF6009 /* Constants.swift */; };
+		DC53832D2B32CD5B00AF6009 /* ApiFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC53832C2B32CD5B00AF6009 /* ApiFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DC5382E72B31EB5300AF6009 /* FreeApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC5382EA2B31EB5300AF6009 /* FreeAppsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAppsApp.swift; sourceTree = "<group>"; };
-		DC5382EC2B31EB5300AF6009 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC5382EC2B31EB5300AF6009 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DC5382EE2B31EB5600AF6009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC5382F12B31EB5600AF6009 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC5382F92B31EB8200AF6009 /* AppResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResponse.swift; sourceTree = "<group>"; };
 		DC5382FC2B31EBB700AF6009 /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 		DC5382FF2B31EF0800AF6009 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		DC5383272B32C92B00AF6009 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		DC53832A2B32CB0700AF6009 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DC53832C2B32CD5B00AF6009 /* ApiFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +63,12 @@
 		DC5382E92B31EB5300AF6009 /* FreeApps */ = {
 			isa = PBXGroup;
 			children = (
+				DC5383292B32CAFB00AF6009 /* Common */,
+				DC5383262B32C90400AF6009 /* Views */,
 				DC5382FE2B31EEF900AF6009 /* ViewModel */,
 				DC5382FB2B31EBA800AF6009 /* Manager */,
 				DC5382F82B31EB5D00AF6009 /* Models */,
 				DC5382EA2B31EB5300AF6009 /* FreeAppsApp.swift */,
-				DC5382EC2B31EB5300AF6009 /* ContentView.swift */,
 				DC5382EE2B31EB5600AF6009 /* Assets.xcassets */,
 				DC5382F02B31EB5600AF6009 /* Preview Content */,
 			);
@@ -96,8 +103,26 @@
 			isa = PBXGroup;
 			children = (
 				DC5382FF2B31EF0800AF6009 /* ViewModel.swift */,
+				DC53832C2B32CD5B00AF6009 /* ApiFactory.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DC5383262B32C90400AF6009 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC5382EC2B31EB5300AF6009 /* HomeView.swift */,
+				DC5383272B32C92B00AF6009 /* DetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DC5383292B32CAFB00AF6009 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DC53832A2B32CB0700AF6009 /* Constants.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +196,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC5383002B31EF0800AF6009 /* ViewModel.swift in Sources */,
+				DC5383282B32C92B00AF6009 /* DetailView.swift in Sources */,
 				DC5382FD2B31EBB700AF6009 /* WebServiceManager.swift in Sources */,
-				DC5382ED2B31EB5300AF6009 /* ContentView.swift in Sources */,
+				DC5382ED2B31EB5300AF6009 /* HomeView.swift in Sources */,
+				DC53832B2B32CB0700AF6009 /* Constants.swift in Sources */,
+				DC53832D2B32CD5B00AF6009 /* ApiFactory.swift in Sources */,
 				DC5382EB2B31EB5300AF6009 /* FreeAppsApp.swift in Sources */,
 				DC5382FA2B31EB8200AF6009 /* AppResponse.swift in Sources */,
 			);

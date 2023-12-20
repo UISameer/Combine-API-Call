@@ -20,13 +20,17 @@ extension NetworkError: LocalizedError {
     }
 }
 
-class WebServiceManager: NSObject {
+protocol WebServiceProtocol {
+    func getData<T: Decodable>(endpoint: String, type: T.Type) -> Future<T, Error>
+}
+
+class WebServiceManager: WebServiceProtocol {
     
     static let shared = WebServiceManager()
     
     private var cancellables = Set<AnyCancellable>()
     
-    func getData<T: Decodable>(endpoint: String, id: Int? = nil, type: T.Type) -> Future<T, Error> {
+    func getData<T: Decodable>(endpoint: String, type: T.Type) -> Future<T, Error> {
         return Future<T, Error> { [weak self] promise in  // (4) -> Future Publisher
             guard let self = self, let url = URL(string: endpoint) else {
                 return promise(.failure(NetworkError.invalidURL))

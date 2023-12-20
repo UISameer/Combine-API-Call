@@ -4,12 +4,24 @@ import Combine
 class ViewModel: ObservableObject {
     
     private var cancellable = Set<AnyCancellable>()
-    weak var webServiceManager: WebServiceManager?
-    @Published var apps: [App] = []
+    private let webServiceManager: WebServiceProtocol
+    @Published var apps: [Applications] = []
+    
+    
+    init(manager: WebServiceProtocol) {
+        self.webServiceManager = manager
+    }
+    
+    deinit {
+        cancelSubscription()
+    }
+    
+    func cancelSubscription() {
+        cancellable.forEach{ $0.cancel() }
+    }
     
     func getApps() {
-        let appURL = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/50/apps.json"
-        self.webServiceManager?.getData(endpoint: appURL, type: AppsResponse.self)
+        self.webServiceManager.getData(endpoint: Constants.url, type: AppsResponse.self)
             .sink { result in
                 switch result {
                     case .failure(let err):
